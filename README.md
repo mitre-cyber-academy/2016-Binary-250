@@ -8,4 +8,11 @@ TODO
 
 ## Distribution
 
-TODO
+To run/set-up docker testing 
+
+     docker build -t got-hijack .
+     docker run -p 2222:22 --read-only --tmpfs /tmp got-hijack
+
+     rm ~/.ssh/known_hosts
+     ssh challenge@localhost -p2222
+     
