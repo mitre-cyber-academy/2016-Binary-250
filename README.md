@@ -15,4 +15,5 @@ To run/set-up docker testing
 
      rm ~/.ssh/known_hosts
      ssh challenge@localhost -p2222
-     
+
+Note: ASLR needs to be disabled when this challenged is placed on this server.
