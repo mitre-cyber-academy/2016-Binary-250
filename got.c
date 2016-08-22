@@ -61,7 +61,7 @@ int calculate_power(char* name_for_calc,char* input){
         int power_lvl = 0;
 
         strcpy(name_for_calc, input);
-        printf("Calculating power for %s...\n", name_for_calc);
+        printf("sh owing power for %s...\n", name_for_calc);
 
         int i = 0;
         char *key = dict[i].str;

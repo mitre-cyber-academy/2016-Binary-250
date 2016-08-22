@@ -8,12 +8,16 @@ TODO
 
 ## Distribution
 
-To run/set-up docker testing 
+To run/set-up docker testing
 
      docker build -t got-hijack .
-     docker run -p 2222:22 --read-only --tmpfs /tmp got-hijack
+     docker run -d -p 2222:22 --read-only --restart=always --cap-add=SYS_PTRACE --tmpfs /tmp got-hijack
 
      rm ~/.ssh/known_hosts
      ssh challenge@localhost -p2222
 
-Note: ASLR needs to be disabled when this challenged is placed on this server.
+Note: ASLR needs to be disabled on the server this challenge is run on.
+
+## Flag
+
+ce121dcdecf4ce8d015b1cbc2afd8968
