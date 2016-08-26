@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:trusty
 MAINTAINER Robert Clark <rbclark@mitre.org>
 
 RUN apt-get update
@@ -11,11 +11,12 @@ COPY got.c .
 COPY sensitive.txt .
 
 RUN gcc -o GoT got.c -m32 -fno-stack-protector
-RUN rm got.c /usr/bin/top
+RUN rm got.c /usr/bin/top /bin/ps
 RUN chmod +x /opt/challenge/
 
 RUN useradd chalowner
 RUN chown chalowner:chalowner GoT
+RUN chmod g+s GoT
 RUN chown chalowner:chalowner sensitive.txt
 RUN chmod 440 sensitive.txt
 
