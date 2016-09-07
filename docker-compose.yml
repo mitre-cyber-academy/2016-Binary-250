@@ -1,0 +1,7 @@
+version: '2'
+services:
+  ssh:
+    build: .
+    ports:
+     - "2222:22"
+    restart: always
