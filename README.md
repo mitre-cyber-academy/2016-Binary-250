@@ -42,8 +42,7 @@ To run/set-up the challenge:
 
     sudo sh -c "echo 'kernel.randomize_va_space=0' >> /etc/sysctl.conf"
     sudo sysctl -p
-    sudo docker build -t got-hijack .
-    sudo docker run -d -p 2222:22 --read-only --restart=always --cap-add=SYS_PTRACE --tmpfs /tmp:exec got-hijack
+    sudo docker-compose up -d
 
     rm ~/.ssh/known_hosts
     ssh challenge@localhost -p2222
